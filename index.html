@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">TechNova Solutions</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="showMissionVision()">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="#contact-form">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Simple Landing Page with Services Overview -->
+    <section id="home" class="hero">
+        <h1>Welcome to TechNova Solutions</h1>
+        <p>Your one-stop solution for digital transformation and consulting.</p>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="simple-services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Website Creation</h3>
+            <p>Build a strong online presence with customized websites that fit your business needs.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Accounting & HR Applications</h3>
+            <p>Streamline your accounting and HR operations with our innovative applications tailored to UAE laws.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-database"></i>
+            <h3>Receipt Databases</h3>
+            <p>Modernize your receipt management with secure, cloud-based databases for easy storage and retrieval.</p>
+        </div>
+        <a href="services.html" class="cta">Learn More About Our Services</a>
+    </section>
+
+    <!-- Mission & Vision Section (Initially Hidden) -->
+    <section id="mission-vision" class="mission-vision hidden">
+        <div class="mission">
+            <h2>Mission</h2>
+            <p>Our mission is to empower businesses to succeed in the digital age. We provide innovative, scalable, and customized digital solutions that drive efficiency, increase productivity, and enhance competitiveness in an ever-evolving business landscape.</p>
+            <p>Drawing inspiration from industry leaders like McKinsey, BCG, and Bain, we focus on data-driven insights, operational efficiency, and transformative technologies that support sustainable growth. Our mission is to be the trusted partner for businesses looking to adopt cutting-edge digital solutions.</p>
+        </div>
+        <div class="vision">
+            <h2>Vision</h2>
+            <p>At TechNova Solutions, our vision is to be a leader in digital transformation, revolutionizing how small to medium-sized businesses operate in the UAE. We aim to create a future where every business, regardless of its size, can leverage world-class technology to enhance customer experiences, streamline operations, and comply with complex regulatory frameworks.</p>
+            <p>Inspired by firms like PwC, KPMG, and SAP, our vision is to provide solutions that are not just technologically advanced but also aligned with the future of work, enabling organizations to adapt to dynamic markets and make informed, data-driven decisions.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TechNova Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Toggle Mission & Vision Section -->
+    <script>
+        function showMissionVision() {
+            const section = document.getElementById('mission-vision');
+            section.classList.toggle('hidden');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

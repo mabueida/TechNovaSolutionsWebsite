@@ -1,0 +1,152 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/Users/mohammedabueida/Desktop/IENProject/your-image-name.jpg'); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Services Section */
+.simple-services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.simple-services h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.simple-services .service-card {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.simple-services .service-card i {
+    font-size: 3em;
+    color: #0073e6;
+    margin-bottom: 15px;
+}
+
+.simple-services .service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.simple-services .service-card p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.simple-services .cta {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.simple-services .cta:hover {
+    background-color: #004f99;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    padding: 50px 20px;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+.mission-vision h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #0073e6;
+}
+
+.mission-vision p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+/* Hidden Section */
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: #005bb5;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}

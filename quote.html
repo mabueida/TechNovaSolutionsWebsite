@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - TechNova Solutions</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Quote Survey Section -->
+    <section id="quote-survey" class="quote-survey">
+        <h2>Get a Quote</h2>
+        <form id="surveyForm">
+            <!-- Service Selection -->
+            <label for="serviceType">Select the Services You Need:</label>
+            <select id="serviceType" multiple required>
+                <option value="website">Website Creation</option>
+                <option value="hr-apps">Accounting & HR Applications</option>
+                <option value="receipt-db">Receipt Databases</option>
+            </select>
+
+            <!-- Business Size -->
+            <label for="businessSize">What’s Your Business Size?</label>
+            <select id="businessSize" required>
+                <option value="small">Small (1-10 employees)</option>
+                <option value="medium">Medium (11-50 employees)</option>
+                <option value="large">Large (51+ employees)</option>
+            </select>
+
+            <!-- Urgency -->
+            <label for="urgency">How Urgent Is the Service?</label>
+            <select id="urgency" required>
+                <option value="low">Not Urgent (1-3 months)</option>
+                <option value="medium">Moderately Urgent (1-2 weeks)</option>
+                <option value="high">Very Urgent (ASAP)</option>
+            </select>
+
+            <!-- Additional Features -->
+            <h3>Would you like additional features?</h3>
+            <div class="feature-group">
+                <label>E-commerce Integration: </label>
+                <label><input type="radio" name="ecommerce" value="yes" required> Yes</label>
+                <label><input type="radio" name="ecommerce" value="no" required> No</label>
+            </div>
+            
+            <div class="feature-group">
+                <label>Supply Chain Management System: </label>
+                <label><input type="radio" name="supplyChain" value="yes" required> Yes</label>
+                <label><input type="radio" name="supplyChain" value="no" required> No</label>
+            </div>
+            
+            <div class="feature-group">
+                <label>Marketing and Brand Strategy: </label>
+                <label><input type="radio" name="marketing" value="yes" required> Yes</label>
+                <label><input type="radio" name="marketing" value="no" required> No</label>
+            </div>
+            
+            <div class="feature-group">
+                <label>Customer Relationship Management (CRM): </label>
+                <label><input type="radio" name="crm" value="yes" required> Yes</label>
+                <label><input type="radio" name="crm" value="no" required> No</label>
+            </div>
+            
+            <div class="feature-group">
+                <label>Custom Data Analytics Dashboard: </label>
+                <label><input type="radio" name="analytics" value="yes" required> Yes</label>
+                <label><input type="radio" name="analytics" value="no" required> No</label>
+            </div>
+
+            <button type="button" onclick="calculateQuote()">Get Estimated Quote</button>
+        </form>
+        <p id="quote-result"></p>
+    </section>
+
+    <!-- JavaScript for Survey -->
+    <script>
+        function calculateQuote() {
+            // Get selected services
+            const serviceTypes = Array.from(document.getElementById('serviceType').selectedOptions).map(opt => opt.value);
+            const businessSize = document.getElementById('businessSize').value;
+            const urgency = document.getElementById('urgency').value;
+
+            // Get additional features selections
+            const ecommerce = document.querySelector('input[name="ecommerce"]:checked').value;
+            const supplyChain = document.querySelector('input[name="supplyChain"]:checked').value;
+            const marketing = document.querySelector('input[name="marketing"]:checked').value;
+            const crm = document.querySelector('input[name="crm"]:checked').value;
+            const analytics = document.querySelector('input[name="analytics"]:checked').value;
+
+            // Base prices for each service (in AED)
+            let basePrice = 0;
+            if (serviceTypes.includes('website')) basePrice += 4000; // AED for website
+            if (serviceTypes.includes('hr-apps')) basePrice += 7000; // AED for HR and Accounting
+            if (serviceTypes.includes('receipt-db')) basePrice += 5000; // AED for Receipt DB
+
+            // Business size multiplier
+            let sizeMultiplier = 1;
+            if (businessSize === 'medium') sizeMultiplier = 1.5;
+            else if (businessSize === 'large') sizeMultiplier = 2;
+
+            // Urgency fees
+            let urgencyFee = 0;
+            if (urgency === 'medium') urgencyFee = 500; // AED
+            else if (urgency === 'high') urgencyFee = 1000; // AED
+
+            // Additional features prices
+            let featurePrice = 0;
+            if (ecommerce === 'yes') featurePrice += 3000; // AED for e-commerce
+            if (supplyChain === 'yes') featurePrice += 4000; // AED for supply chain system
+            if (marketing === 'yes') featurePrice += 2000; // AED for marketing
+            if (crm === 'yes') featurePrice += 2500; // AED for CRM
+            if (analytics === 'yes') featurePrice += 3500; // AED for analytics dashboard
+
+            // Final price calculation
+            const finalPrice = (basePrice * sizeMultiplier) + urgencyFee + featurePrice;
+
+            // Display final quote
+            document.getElementById('quote-result').innerText = `Estimated Quote: AED ${finalPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

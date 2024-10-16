@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - TechNova Solutions</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">TechNova Solutions</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="showMissionVision()">About Us</a></li>
+                <li><a href="quote.html">Get a Quote</a></li> <!-- Button linking to the quote page -->
+                <li><a href="#contact-form">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Detailed Services Page -->
+    <section id="detailed-services" class="detailed-services">
+        <h2>Our Services in Detail</h2>
+        <div class="service">
+            <h3>Website Creation</h3>
+            <p>We help you build a professional and user-friendly website that represents your brand and engages your customers. From e-commerce to content management systems, we offer custom solutions for all your web development needs.</p>
+        </div>
+        <div class="service">
+            <h3>Accounting & HR Applications</h3>
+            <p>Ensure compliance with UAE regulations through our streamlined accounting and HR systems. We offer solutions that simplify payroll management, employee tracking, and financial reporting.</p>
+        </div>
+        <div class="service">
+            <h3>Receipt Databases</h3>
+            <p>Transform your business by digitizing your receipt management. Our receipt databases provide secure, accessible, and organized storage for all your financial records, ensuring you’re ready for audits at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TechNova Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Toggle Mission & Vision Section -->
+    <script>
+        function showMissionVision() {
+            const section = document.getElementById('mission-vision');
+            section.classList.toggle('hidden');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
